@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
 
@@ -9,13 +9,24 @@
 
 <title>Spider Empire</title>
 
+
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+
 <link rel="stylesheet" href="style.css">
+
 
 </head>
 
 
 <body>
 
+
+<div class="app">
+
+
+
+<!-- ЛОГО -->
 
 <div class="logo">
 
@@ -27,13 +38,22 @@ SPIDER
 
 
 
+<!-- ПРОФИЛЬ -->
+
+
 <div class="player">
 
+<div id="username">
 PLAYER
+</div>
 
 </div>
 
 
+
+
+
+<!-- БАЛАНС -->
 
 
 <div class="energy-box">
@@ -41,12 +61,12 @@ PLAYER
 
 <div class="energy-title">
 
-ENERGY
+BALANCE
 
 </div>
 
 
-<div class="energy">
+<div class="energy" id="balance">
 
 0
 
@@ -54,34 +74,53 @@ ENERGY
 
 
 
-<div class="level">
+<div class="level" id="level">
 
 LEVEL 1
 
 </div>
 
 
+
 </div>
 
 
+
+
+
+
+
+<!-- ПАУК -->
 
 
 <div class="spider-zone">
 
 
-<div class="spider"></div>
+<div class="spider">
+
+</div>
+
+
+<div id="reward">
+
+</div>
 
 
 </div>
 
 
 
-<div style="text-align:center">
 
 
-<button class="tap">
+<!-- КНОПКА -->
 
-TAP
+
+<div class="tap-area">
+
+
+<button class="tap" id="tap">
+
+TAP SPIDER
 
 </button>
 
@@ -92,61 +131,232 @@ TAP
 
 
 
+
+
+<!-- СТАТИСТИКА -->
+
+
 <div class="stats">
 
 
-POWER <span id="power">1</span>
+<div>
 
-<br>
+POWER
 
+<strong id="power">
 
-INCOME <span id="income">0</span>/h
+1
 
+</strong>
 
 </div>
 
-
-
-
-
-<div class="menu">
 
 
 <div>
 
-HOME
+INCOME
+
+<strong id="income">
+
+0/h
+
+</strong>
 
 </div>
 
-
-<div>
-
-UPGRADE
-
-</div>
 
 
 <div>
 
 FRIENDS
 
+<strong id="friends">
+
+0
+
+</strong>
+
 </div>
 
 
-<div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- ПАНЕЛЬ ДРУЗЕЙ -->
+
+
+<div id="friendsPanel" class="panel">
+
+
+<h2>
+
+FRIENDS
+
+</h2>
+
+
+<p>
+
+Invite players and earn bonuses
+
+</p>
+
+
+
+<div id="inviteLink">
+
+Your link
+
+</div>
+
+
+
+<button onclick="copyInvite()">
+
+COPY LINK
+
+</button>
+
+
+
+<div class="friends-count">
+
+Invited:
+
+<span id="friendsCount">
+
+0
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- ПРОФИЛЬ -->
+
+
+
+<div id="profilePanel" class="panel">
+
+
+<h2>
+
+PROFILE
+
+</h2>
+
+
+<p id="profileName">
+
+Player
+
+</p>
+
+
+<p>
+
+Level:
+<span id="profileLevel">
+1
+</span>
+
+</p>
+
+
+<p>
+
+Balance:
+<span id="profileBalance">
+0
+</span>
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- МЕНЮ -->
+
+
+<div class="menu">
+
+
+<div onclick="openHome()">
+
+HOME
+
+</div>
+
+
+
+<div onclick="openUpgrade()">
+
+UPGRADE
+
+</div>
+
+
+
+<div onclick="openFriends()">
+
+FRIENDS
+
+</div>
+
+
+
+<div onclick="openProfile()">
 
 PROFILE
 
 </div>
 
 
+
 </div>
 
 
 
 
 
+
+</div>
+
+
+
+
+
+
+<script src="telegram.js"></script>
+
 <script src="app.js"></script>
+
 
 
 </body>
