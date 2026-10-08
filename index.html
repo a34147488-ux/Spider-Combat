@@ -1,462 +1,111 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<title>Spider Combat</title>
 
-<title>Spider Empire</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-}
-
-body{
-
-height:100vh;
-overflow:hidden;
-
-background:
-radial-gradient(circle at 50% 20%,#123a62,#050817 60%);
-
-color:white;
-
-}
-
-
-
-.app{
-
-height:100%;
-padding:25px 20px 110px;
-
-}
-
-
-
-/* HEADER */
-
-.logo{
-
-font-size:38px;
-font-weight:900;
-letter-spacing:12px;
-
-text-shadow:
-0 0 30px #00eaff;
-
-}
-
-.sub{
-
-font-size:18px;
-letter-spacing:15px;
-color:#7ea7ff;
-
-margin-left:8px;
-
-}
-
-
-
-/* BALANCE */
-
-.card{
-
-margin-top:35px;
-
-padding:22px;
-
-border-radius:30px;
-
-background:
-rgba(255,255,255,.09);
-
-border:
-1px solid rgba(255,255,255,.2);
-
-backdrop-filter:blur(25px);
-
-text-align:center;
-
-box-shadow:
-0 0 50px rgba(0,200,255,.15);
-
-}
-
-
-
-.label{
-
-letter-spacing:8px;
-opacity:.7;
-
-}
-
-
-.balance{
-
-font-size:70px;
-font-weight:800;
-
-text-shadow:
-0 0 25px #00ffff;
-
-}
-
-
-
-/* SPIDER AREA */
-
-.arena{
-
-height:390px;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-}
-
-
-
-.spider-box{
-
-width:280px;
-height:280px;
-
-border-radius:50%;
-
-background:
-
-radial-gradient(circle,
-rgba(0,255,255,.25),
-transparent 65%);
-
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-animation:
-pulse 3s infinite;
-
-}
-
-
-
-svg{
-
-width:220px;
-
-filter:
-
-drop-shadow(0 0 20px cyan);
-
-animation:
-float 3s infinite ease-in-out;
-
-}
-
-
-
-@keyframes float{
-
-50%{
-transform:translateY(-15px);
-}
-
-}
-
-
-@keyframes pulse{
-
-50%{
-
-box-shadow:
-0 0 80px cyan;
-
-}
-
-}
-
-
-
-/* STATS */
-
-
-.stats{
-
-display:flex;
-
-gap:12px;
-
-}
-
-
-
-.stat{
-
-flex:1;
-
-padding:15px;
-
-border-radius:22px;
-
-background:
-rgba(255,255,255,.08);
-
-text-align:center;
-
-border:
-1px solid rgba(255,255,255,.15);
-
-}
-
-
-
-.stat b{
-
-font-size:22px;
-
-}
-
-
-
-/* MENU */
-
-
-.menu{
-
-position:fixed;
-
-bottom:18px;
-
-left:18px;
-
-right:18px;
-
-height:75px;
-
-border-radius:35px;
-
-
-background:
-
-rgba(255,255,255,.12);
-
-
-border:
-
-1px solid rgba(255,255,255,.25);
-
-
-backdrop-filter:blur(25px);
-
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-around;
-
-
-}
-
-
-
-.menu div{
-
-font-size:12px;
-
-opacity:.7;
-
-}
-
-
-.menu .active{
-
-color:#00ffff;
-
-opacity:1;
-
-}
-
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
-
 <body>
-
 
 <div class="app">
 
 
-<div class="logo">
-SPIDER
-</div>
-
-<div class="sub">
-EMPIRE
-</div>
+<header class="logo">
+    <h1>SPIDER</h1>
+    <span>EMPIRE</span>
+</header>
 
 
+<section class="balance">
 
-<div class="card">
+    <p>BALANCE</p>
 
-<div class="label">
-BALANCE
-</div>
+    <h2 id="balance">
+        0
+    </h2>
 
-<div class="balance">
-0
-</div>
+    <div class="level">
+        LEVEL 1
+    </div>
 
-
-</div>
+</section>
 
 
 
-<div class="arena">
+<div class="spider-area">
 
+    <div class="spider-button">
 
-<div class="spider-box">
+        <img src="assets/spider.png">
 
-
-<svg viewBox="0 0 300 300">
-
-
-<!-- legs -->
-
-<g stroke="#00ffff" stroke-width="12" stroke-linecap="round">
-
-<path d="M90 120 L25 80"/>
-<path d="M85 150 L15 150"/>
-<path d="M90 180 L25 220"/>
-
-
-<path d="M210 120 L275 80"/>
-<path d="M215 150 L285 150"/>
-<path d="M210 180 L275 220"/>
-
-
-</g>
-
-
-
-<!-- body -->
-
-<ellipse cx="150" cy="170"
-rx="70"
-ry="80"
-fill="#050505"
-stroke="#00ffff"
-stroke-width="8"/>
-
-
-<!-- head -->
-
-<circle cx="150" cy="90"
-r="45"
-fill="#050505"
-stroke="#00ffff"
-stroke-width="8"/>
-
-
-<!-- eyes -->
-
-<circle cx="130" cy="85" r="8" fill="white"/>
-<circle cx="170" cy="85" r="8" fill="white"/>
-
-
-
-</svg>
-
-
-</div>
-
+    </div>
 
 </div>
 
 
 
-<div class="stats">
-
-
-<div class="stat">
-POWER
-<br>
-<b>1</b>
-</div>
-
-
-<div class="stat">
-LEVEL
-<br>
-<b>1</b>
-</div>
-
-
-<div class="stat">
-ENERGY
-<br>
-<b>1000</b>
-</div>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-<div class="menu">
-
-
-<div class="active">
-HOME
-</div>
+<section class="stats">
 
 <div>
-UPGRADE
+POWER
+<b>1</b>
 </div>
+
+
+<div>
+INCOME
+<b>0/h</b>
+</div>
+
 
 <div>
 FRIENDS
+<b>0</b>
 </div>
+
+</section>
+
+
+
+<nav class="bottom-menu">
+
+
+<div class="active">
+🏠
+<span>HOME</span>
+</div>
+
 
 <div>
-PROFILE
+⚡
+<span>UPGRADE</span>
 </div>
 
 
+<div>
+👥
+<span>FRIENDS</span>
 </div>
 
 
+<div>
+👤
+<span>PROFILE</span>
+</div>
 
-<script>
 
-const tg = window.Telegram.WebApp;
+</nav>
 
-tg.expand();
 
-</script>
+</div>
 
+
+<script src="app.js"></script>
 
 </body>
 </html>
