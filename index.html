@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
 
 <meta charset="UTF-8">
@@ -9,8 +8,6 @@
 <title>Empire Casino</title>
 
 <link rel="stylesheet" href="style.css">
-
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
 
 </head>
 
@@ -21,7 +18,7 @@
 <div class="app">
 
 
-<header class="casino-header">
+<header class="header">
 
 <h1>EMPIRE</h1>
 
@@ -31,29 +28,30 @@
 
 
 
-<section class="balance-box">
+<section class="balance">
 
 <span>BALANCE</span>
 
-<h2 id="balance">10000</h2>
+<h2 id="balance">
+10000
+</h2>
 
-<div class="currency">
-CHIPS
-</div>
+<small>CHIPS</small>
 
 </section>
 
 
 
-
-<section class="games">
-
-
-<h3>GAMES</h3>
+<h3 class="title">
+GAMES
+</h3>
 
 
 
-<div class="game-card">
+<div class="games">
+
+
+<div class="game">
 
 <img src="assets/olympus.png">
 
@@ -61,7 +59,7 @@ CHIPS
 
 <h2>Gates Olympus</h2>
 
-<button onclick="openGame('olympus')">
+<button>
 PLAY
 </button>
 
@@ -71,9 +69,7 @@ PLAY
 
 
 
-
-
-<div class="game-card">
+<div class="game">
 
 <img src="assets/doghouse.png">
 
@@ -81,7 +77,7 @@ PLAY
 
 <h2>Dog House</h2>
 
-<button onclick="openGame('doghouse')">
+<button>
 PLAY
 </button>
 
@@ -91,17 +87,15 @@ PLAY
 
 
 
+<div class="game">
 
-
-<div class="game-card">
-
-<img src="assets/lebandit.png">
+<img src="assets/bandit.png">
 
 <div>
 
 <h2>Le Bandit</h2>
 
-<button onclick="openGame('bandit')">
+<button>
 PLAY
 </button>
 
@@ -111,9 +105,7 @@ PLAY
 
 
 
-
-
-<div class="game-card">
+<div class="game">
 
 <img src="assets/roulette.png">
 
@@ -121,7 +113,7 @@ PLAY
 
 <h2>Roulette</h2>
 
-<button onclick="openGame('roulette')">
+<button>
 PLAY
 </button>
 
@@ -130,64 +122,32 @@ PLAY
 </div>
 
 
-
-</section>
-
+</div>
 
 
 
 
+<nav>
 
-<nav class="menu">
 
-
-<button onclick="home()">
-
-⌂
-
-<span>
+<button>
 HOME
-</span>
-
 </button>
 
 
-
-<button onclick="games()">
-
-♛
-
-<span>
+<button>
 GAMES
-</span>
-
 </button>
 
 
-
-
-<button onclick="friends()">
-
-♟
-
-<span>
+<button>
 FRIENDS
-</span>
-
 </button>
 
 
-
-<button onclick="profile()">
-
-●
-
-<span>
+<button>
 PROFILE
-</span>
-
 </button>
-
 
 
 </nav>
@@ -197,10 +157,8 @@ PROFILE
 </div>
 
 
-
 <script src="app.js"></script>
 
 
 </body>
-
 </html>
