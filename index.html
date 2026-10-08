@@ -2,14 +2,12 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Spider Empire</title>
 
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 
@@ -19,10 +17,8 @@
 
 
 <header class="logo">
-
 <h1>SPIDER</h1>
 <span>EMPIRE</span>
-
 </header>
 
 
@@ -44,108 +40,62 @@ LEVEL 1
 
 <div class="spider-area">
 
-
 <button class="spider-button" onclick="clickSpider()">
 
-<div class="spider-icon">
-
-🕷
-
+<div class="spider-symbol">
+🕷️
 </div>
-
 
 </button>
 
-
 </div>
-
 
 
 
 
 <section class="stats">
 
-
 <div>
 <span>POWER</span>
-<b id="power">1</b>
+<b>1</b>
 </div>
-
 
 <div>
 <span>INCOME</span>
-<b id="income">0/h</b>
+<b>0/h</b>
 </div>
-
 
 <div>
 <span>FRIENDS</span>
-<b id="friends">0</b>
+<b>0</b>
 </div>
-
 
 </section>
 
 
 
 
-
-
 <nav class="bottom-menu">
 
-
 <button class="active">
-
-<svg viewBox="0 0 24 24">
-<path d="M3 11L12 3L21 11V21H14V15H10V21H3Z"/>
-</svg>
-
+⌂
 <span>HOME</span>
-
 </button>
 
-
-
-
 <button>
-
-<svg viewBox="0 0 24 24">
-<path d="M12 2L4 14H11L10 22L20 9H13L12 2Z"/>
-</svg>
-
+⚡
 <span>UPGRADE</span>
-
 </button>
 
-
-
-
 <button>
-
-<svg viewBox="0 0 24 24">
-<circle cx="9" cy="8" r="4"/>
-<circle cx="17" cy="10" r="3"/>
-<path d="M2 21C2 16 16 16 16 21"/>
-</svg>
-
+♟
 <span>FRIENDS</span>
-
 </button>
-
-
-
 
 <button>
-
-<svg viewBox="0 0 24 24">
-<circle cx="12" cy="8" r="4"/>
-<path d="M4 22C4 16 20 16 20 22"/>
-</svg>
-
+●
 <span>PROFILE</span>
-
 </button>
-
 
 </nav>
 
@@ -158,19 +108,15 @@ LEVEL 1
 
 let coins = 0;
 
-
 function clickSpider(){
 
 coins++;
 
 document.getElementById("balance").innerText = coins;
 
-
 }
 
-
 </script>
-
 
 
 </body>
