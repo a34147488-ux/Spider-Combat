@@ -1,92 +1,30 @@
 let balance = 0;
-let power = 1;
-let income = 0;
-let friends = 0;
-
-
-const balanceText = document.getElementById("balance");
 
 const spider = document.querySelector(".spider-button");
+const balanceText = document.getElementById("balance");
 
+spider.addEventListener("click", () => {
 
-
-function update() {
+    balance += 1;
 
     balanceText.innerText = balance;
 
-}
+    spider.classList.remove("click");
+
+    void spider.offsetWidth;
+
+    spider.classList.add("click");
 
 
+    let plus = document.createElement("div");
+    plus.innerHTML = "+1";
+    plus.className = "plus";
 
-spider.addEventListener("click", function(){
-
-
-    balance += power;
-
-
-    update();
-
-
-
-    // эффект клика
-
-    spider.style.transform = "scale(0.92)";
+    spider.appendChild(plus);
 
 
     setTimeout(()=>{
-
-        spider.style.transform = "scale(1)";
-
-    },100);
-
-
+        plus.remove();
+    },800);
 
 });
-
-
-
-
-
-// сохранение прогресса
-
-
-setInterval(()=>{
-
-
-localStorage.setItem(
-"spider_balance",
-balance
-);
-
-
-},1000);
-
-
-
-
-
-// загрузка
-
-
-window.onload = ()=>{
-
-
-let saved = localStorage.getItem(
-"spider_balance"
-);
-
-
-
-if(saved){
-
-balance = Number(saved);
-
-}
-
-
-
-update();
-
-
-
-}
