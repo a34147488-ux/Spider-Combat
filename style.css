@@ -1,211 +1,229 @@
 *{
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 body{
-    margin:0;
-    background:#05060b;
-    overflow:hidden;
+margin:0;
+background:#080910;
+overflow:hidden;
 }
 
 
 .app{
-    width:100%;
-    height:100vh;
-    background:#ffffff;
-    border-radius:35px 35px 0 0;
-    overflow:hidden;
+height:100vh;
+width:100%;
+background:#fff;
+border-radius:35px 35px 0 0;
+overflow:hidden;
+position:relative;
 }
 
 
-
-/* Верх Telegram */
+/* Верх */
 
 header{
-    height:110px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:20px 25px;
-    border-bottom:1px solid #eee;
+height:105px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:20px 28px;
+border-bottom:1px solid #eee;
 }
 
 
 .close{
-    font-size:22px;
-    color:#111;
+font-size:23px;
+color:#111;
 }
 
 
 .title{
-    text-align:center;
+text-align:center;
 }
 
 
 .title h1{
-    margin:0;
-    font-size:26px;
-    font-weight:800;
+margin:0;
+font-size:27px;
+font-weight:800;
 }
 
 
 .title span{
-    color:#777;
-    font-size:17px;
-    font-weight:600;
+font-size:17px;
+color:#777;
+font-weight:600;
 }
 
 
 .more{
-    font-size:25px;
+font-size:30px;
+letter-spacing:3px;
 }
-
 
 
 
 /* Пользователь */
 
 .user{
-    height:90px;
-    background:#f7f7f7;
-    display:flex;
-    align-items:center;
-    padding:15px 25px;
+height:90px;
+display:flex;
+align-items:center;
+padding:15px 25px;
+background:#f8f8f8;
 }
 
 
 .avatar{
-    width:65px;
-    height:65px;
-    border-radius:50%;
-    background:#35cdbd;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:34px;
-    font-weight:800;
+width:66px;
+height:66px;
+border-radius:50%;
+background:#52d0c3;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:38px;
+font-weight:800;
 }
 
 
 .username{
-    margin-left:20px;
+margin-left:20px;
 }
 
 
 .username h2{
-    margin:0;
-    font-size:22px;
+margin:0;
+font-size:24px;
 }
 
 
 .username p{
-    margin:5px 0;
-    color:#999;
-    font-size:18px;
+margin:4px 0;
+font-size:18px;
+color:#999;
 }
 
 
 .star{
-    margin-left:auto;
-    background:#ffbb24;
-    color:white;
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:28px;
+width:52px;
+height:52px;
+margin-left:auto;
+border-radius:50%;
+background:#ffbf22;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:30px;
 }
 
 
 
-
-/* Главный экран */
+/* Баланс */
 
 main{
-    text-align:center;
-    padding-top:55px;
+text-align:center;
+padding-top:55px;
 }
 
 
 .balance-title{
-    color:#999;
-    font-size:28px;
-    font-weight:700;
+font-size:29px;
+color:#999;
+font-weight:700;
 }
 
 
 .balance{
-    margin-top:5px;
-    font-size:65px;
-    font-weight:800;
-    color:#333;
+font-size:66px;
+font-weight:800;
+color:#303030;
+margin-top:5px;
 }
 
 
 .balance span{
-    font-size:35px;
+display:none;
 }
 
 
 .speed{
-    margin-top:25px;
-    color:#ffb800;
-    font-size:24px;
+margin-top:22px;
+font-size:25px;
+color:#ffb800;
 }
 
 
 .click-power{
-    margin-top:18px;
-    color:#6675dd;
-    font-size:24px;
+margin-top:18px;
+font-size:25px;
+color:#6675dd;
 }
 
 
 
-
-
-/* Монета U */
+/* Монета */
 
 .coin{
 
-    margin:130px auto 0;
+position:absolute;
 
-    width:330px;
-    height:330px;
+top:770px;
+left:50%;
+transform:translateX(-50%);
 
-    border-radius:50%;
+width:330px;
+height:330px;
 
-    background:
-    radial-gradient(circle at 30% 30%,
-    #ffe88a,
-    #ffc933 55%,
-    #ffb000);
+border-radius:50%;
 
-    border:18px solid #ffc52b;
+background:
+radial-gradient(
+circle at 35% 25%,
+#fff1a5,
+#ffd044 45%,
+#e8a900 90%
+);
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
 
-    box-shadow:
-    0 10px 35px rgba(255,190,0,.35);
+border:16px solid #ffc52b;
+
+
+box-shadow:
+0 15px 40px rgba(220,160,0,.45),
+inset 0 0 25px rgba(255,255,255,.5);
+
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+
+transition:.12s;
 
 }
+
+
+.coin:active{
+transform:translateX(-50%) scale(.94);
+}
+
 
 
 .u-letter{
 
-    font-size:190px;
-    font-weight:900;
+font-size:190px;
 
-    color:#fff1a8;
+font-weight:900;
 
-    text-shadow:
-    4px 4px 0 #e9a900;
+color:#fff0a0;
+
+text-shadow:
+5px 5px 0 #d89b00,
+0 0 20px white;
 
 }
 
@@ -217,26 +235,29 @@ main{
 nav{
 
 position:absolute;
+
 bottom:0;
-left:0;
+
+height:270px;
 
 width:100%;
 
-height:280px;
-
 background:#fafafa;
 
-border-radius:25px 25px 0 0;
+border-radius:30px 30px 0 0;
 
 }
 
 
-
 .tabs{
 
+height:90px;
+
 display:flex;
+
+align-items:center;
+
 justify-content:space-around;
-padding:25px 10px;
 
 }
 
@@ -244,6 +265,7 @@ padding:25px 10px;
 .tabs button{
 
 border:0;
+
 background:none;
 
 font-size:23px;
@@ -259,13 +281,14 @@ color:#777;
 
 background:white;
 
-padding:15px 30px;
+padding:16px 32px;
 
-border-radius:35px;
+border-radius:40px;
 
 color:#222;
 
 }
+
 
 
 
@@ -275,7 +298,7 @@ display:flex;
 
 justify-content:space-around;
 
-margin-top:45px;
+padding-top:35px;
 
 }
 
@@ -294,10 +317,30 @@ color:#333;
 
 .icon{
 
-font-size:40px;
+width:48px;
+height:48px;
 
-margin-bottom:8px;
+margin:auto;
 
-color:#ffbf00;
+border:4px solid #ffc32b;
 
+border-radius:12px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:25px;
+
+color:#ffc32b;
+
+margin-bottom:10px;
+
+}
+
+.item span{
+font-size:16px;
+font-weight:600;
 }
