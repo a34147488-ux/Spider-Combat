@@ -339,3 +339,50 @@ color:#00ffff;
 fill:#00ffff;
 
 }
+.spider-button{
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    transition:.15s;
+}
+
+
+.spider-button img{
+    width:230px;
+    height:230px;
+    object-fit:contain;
+    filter:drop-shadow(0 0 30px #00ffff);
+}
+
+
+.spider-button.click{
+    transform:scale(.88);
+}
+
+
+.plus{
+    position:absolute;
+    color:#00ffff;
+    font-size:40px;
+    font-weight:bold;
+    animation:up .8s forwards;
+}
+
+
+@keyframes up{
+
+0%{
+transform:translateY(0);
+opacity:1;
+}
+
+100%{
+transform:translateY(-100px);
+opacity:0;
+}
+
+}
