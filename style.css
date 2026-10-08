@@ -1,34 +1,238 @@
-/* ===========================
-   SPIDER EMPIRE
-   Telegram Mini App Design
-=========================== */
-
-
-*{
+* {
     box-sizing:border-box;
     margin:0;
     padding:0;
-    font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    sans-serif;
 }
 
 
-body{
+body {
 
     min-height:100vh;
 
+    background:
+    radial-gradient(circle at top,
+    #12345a,
+    #020712 60%);
+
+    color:white;
+
+    font-family:
+    Arial,
+    sans-serif;
+
     overflow:hidden;
 
+}
+
+
+
+.app {
+
+    min-height:100vh;
+
+    padding:30px 20px;
+
+}
+
+
+
+/* LOGO */
+
+.logo {
+
+    text-align:left;
+
+    margin-top:20px;
+
+}
+
+
+.logo h1 {
+
+    font-size:55px;
+
+    letter-spacing:12px;
+
+    text-shadow:
+    0 0 20px #00ffff;
+
+}
+
+
+.logo span {
+
+    display:block;
+
+    margin-left:10px;
+
+    font-size:28px;
+
+    letter-spacing:18px;
+
+    color:#5b8cff;
+
+}
+
+
+
+/* BALANCE */
+
+.balance {
+
+    margin-top:40px;
+
+    height:190px;
+
+    border-radius:35px;
+
     background:
-    radial-gradient(
-        circle at top,
-        #263b78,
-        #070b18 55%,
-        #02030a
-    );
+    rgba(255,255,255,.12);
+
+    backdrop-filter:
+    blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.25);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+.balance p {
+
+    letter-spacing:8px;
+
+    color:#bfc9df;
+
+}
+
+
+.balance h2 {
+
+    font-size:70px;
+
+    text-shadow:
+    0 0 30px #00ffff;
+
+}
+
+
+
+.level {
+
+    margin-top:10px;
+
+    padding:12px 45px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(90deg,#00c6ff,#477cff);
+
+}
+
+
+
+/* SPIDER */
+
+.spider-area {
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:55px;
+
+}
+
+
+
+.spider-button {
+
+
+    width:280px;
+
+    height:280px;
+
+    border-radius:50%;
+
+
+    background:
+    radial-gradient(circle,
+    #092033,
+    #020712);
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    box-shadow:
+
+    0 0 70px #00ffff,
+    inset 0 0 50px #00ffff;
+
+
+}
+
+
+
+.spider-button img {
+
+
+    width:190px;
+
+
+    filter:
+
+    drop-shadow(0 0 30px cyan);
+
+
+}
+
+
+
+/* STATS */
+
+.stats {
+
+
+    margin-top:30px;
+
+
+    display:flex;
+
+    justify-content:space-around;
+
+
+}
+
+
+.stats div {
+
+
+    text-align:center;
+
+    color:#aebbd5;
+
+}
+
+
+.stats b {
+
+    display:block;
+
+    font-size:22px;
 
     color:white;
 
@@ -36,606 +240,83 @@ body{
 
 
 
+/* MENU */
 
 
-
-/* главный контейнер */
-
-
-.app{
-
-    width:100%;
-
-    min-height:100vh;
-
-    padding:25px 20px 110px;
-
-    position:relative;
-
-}
+.bottom-menu {
 
 
+    position:fixed;
 
 
+    bottom:25px;
+
+    left:20px;
+
+    right:20px;
 
 
-/* верх */
+    height:85px;
 
 
-.header{
+    border-radius:45px;
 
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-}
-
-
-
-.logo{
-
-
-    font-size:42px;
-
-    letter-spacing:12px;
-
-    font-weight:900;
-
-    background:
-    linear-gradient(
-    90deg,
-    #ffffff,
-    #4d8dff
-    );
-
-    -webkit-background-clip:text;
-
-    color:transparent;
-
-
-    text-shadow:
-    0 0 30px #258cff;
-
-}
-
-
-
-.subtitle{
-
-
-    letter-spacing:15px;
-
-    font-size:22px;
-
-    color:#638cff;
-
-}
-
-
-
-
-
-.player{
-
-    padding:14px 25px;
-
-    border-radius:30px;
 
     background:
 
-    rgba(255,255,255,.08);
-
-    border:
-
-    1px solid rgba(255,255,255,.2);
+    rgba(255,255,255,.14);
 
 
     backdrop-filter:
-    blur(20px);
-
-}
+    blur(25px);
 
 
 
+    border:
+
+    1px solid rgba(255,255,255,.25);
 
 
 
+    display:flex;
 
-/* энергия */
+    justify-content:space-around;
 
-
-.energy-card{
-
-
-margin-top:35px;
-
-padding:35px;
-
-border-radius:35px;
-
-
-background:
-
-rgba(255,255,255,.08);
-
-
-border:
-
-1px solid rgba(255,255,255,.18);
-
-
-backdrop-filter:
-blur(25px);
-
-
-box-shadow:
-
-0 20px 60px rgba(0,0,0,.4);
-
-
-text-align:center;
+    align-items:center;
 
 
 }
 
 
 
-
-.energy-title{
-
-
-font-size:18px;
-
-letter-spacing:8px;
-
-opacity:.7;
+.bottom-menu div {
 
 
-}
+    display:flex;
 
+    flex-direction:column;
 
+    align-items:center;
 
-.balance{
+    color:#c8d2e8;
 
-
-font-size:70px;
-
-font-weight:900;
-
-
-margin:10px;
-
-
-text-shadow:
-
-0 0 40px #00eaff;
+    font-size:13px;
 
 
 }
 
 
 
-.level{
+.bottom-menu span {
 
-
-display:inline-block;
-
-padding:15px 50px;
-
-border-radius:40px;
-
-
-background:
-
-linear-gradient(
-90deg,
-#00d4ff,
-#506cff
-);
-
-
-font-size:20px;
-
+    margin-top:5px;
 
 }
 
 
 
+.bottom-menu .active {
 
-
-
-
-
-/* паук */
-
-
-.spider-zone{
-
-
-margin-top:50px;
-
-height:350px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-
-}
-
-
-
-.spider{
-
-
-width:270px;
-
-height:270px;
-
-
-border-radius:50%;
-
-
-background:
-
-radial-gradient(
-circle,
-#111827,
-#05070d
-);
-
-
-box-shadow:
-
-0 0 80px #00ffff;
-
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-
-position:relative;
-
-
-animation:
-
-float 4s infinite ease-in-out;
-
-
-}
-
-
-
-.spider:before{
-
-
-content:"";
-
-
-position:absolute;
-
-
-inset:-15px;
-
-
-border-radius:50%;
-
-
-border:
-
-3px solid #00ffff;
-
-
-animation:
-
-spin 8s linear infinite;
-
-
-}
-
-
-
-.tap-button{
-
-
-width:170px;
-
-height:70px;
-
-
-border:none;
-
-
-border-radius:40px;
-
-
-font-size:25px;
-
-
-font-weight:800;
-
-
-color:white;
-
-
-background:
-
-linear-gradient(
-90deg,
-#00eaff,
-#7b5cff
-);
-
-
-box-shadow:
-
-0 0 40px #00eaff;
-
-
-cursor:pointer;
-
-
-transition:.2s;
-
-
-}
-
-
-
-.tap-button:active{
-
-
-transform:scale(.9);
-
-
-}
-
-
-
-
-
-
-
-
-/* статистика */
-
-
-.stats{
-
-
-margin-top:20px;
-
-
-font-size:18px;
-
-
-line-height:35px;
-
-
-opacity:.9;
-
-
-}
-
-
-
-
-
-
-
-/* нижнее меню */
-
-
-.menu{
-
-
-position:fixed;
-
-
-bottom:20px;
-
-
-left:20px;
-
-right:20px;
-
-
-height:75px;
-
-
-border-radius:40px;
-
-
-display:flex;
-
-justify-content:space-around;
-
-align-items:center;
-
-
-background:
-
-rgba(255,255,255,.10);
-
-
-border:
-
-1px solid rgba(255,255,255,.2);
-
-
-backdrop-filter:
-
-blur(25px);
-
-
-}
-
-
-
-.menu button{
-
-
-background:none;
-
-border:none;
-
-color:white;
-
-
-font-size:16px;
-
-
-opacity:.7;
-
-
-}
-
-
-
-.menu button:hover{
-
-
-opacity:1;
-
-color:#00ffff;
-
-
-}
-
-
-
-
-
-
-
-
-
-/* награда */
-
-
-.reward{
-
-
-position:fixed;
-
-top:45%;
-
-left:50%;
-
-
-transform:
-translate(-50%,0);
-
-
-font-size:40px;
-
-font-weight:900;
-
-
-color:#00ffff;
-
-
-opacity:0;
-
-
-transition:.5s;
-
-
-text-shadow:
-
-0 0 30px cyan;
-
-
-}
-
-
-
-
-
-
-
-
-
-@keyframes float{
-
-
-0%,100%{
-
-transform:
-translateY(0);
-
-}
-
-
-50%{
-
-transform:
-translateY(-20px);
-
-}
-
-
-}
-
-
-
-
-
-@keyframes spin{
-
-
-from{
-
-transform:rotate(0deg);
-
-}
-
-to{
-
-transform:rotate(360deg);
-
-}
-
-
-}
-
-
-
-
-
-
-@media(max-width:600px){
-
-
-.logo{
-
-font-size:35px;
-
-}
-
-
-.balance{
-
-font-size:60px;
-
-}
-
-
-.spider{
-
-width:240px;
-
-height:240px;
-
-}
-
-
+    color:#00ffff;
 
 }
