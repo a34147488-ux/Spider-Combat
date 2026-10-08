@@ -1,20 +1,295 @@
 <!DOCTYPE html>
-<html lang="ru">
-
+<html lang="en">
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Spider Empire</title>
 
-
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
+<style>
 
-<link rel="stylesheet" href="style.css">
+*{
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
 
+body{
+margin:0;
+min-height:100vh;
+background:
+radial-gradient(circle at top,#204080,#050914);
+color:white;
+overflow:hidden;
+}
+
+
+.container{
+padding:25px;
+}
+
+
+.logo{
+font-size:45px;
+font-weight:900;
+letter-spacing:12px;
+text-align:center;
+margin-top:20px;
+text-shadow:
+0 0 20px #00ffff;
+}
+
+.sub{
+text-align:center;
+font-size:25px;
+letter-spacing:15px;
+color:#668cff;
+}
+
+
+.card{
+
+margin-top:35px;
+
+background:
+rgba(255,255,255,.12);
+
+border:
+
+1px solid rgba(255,255,255,.2);
+
+border-radius:35px;
+
+padding:25px;
+
+backdrop-filter:blur(20px);
+
+text-align:center;
+
+box-shadow:
+0 0 40px rgba(0,255,255,.15);
+
+}
+
+
+.title{
+letter-spacing:10px;
+opacity:.7;
+}
+
+.balance{
+
+font-size:80px;
+font-weight:800;
+
+text-shadow:
+0 0 30px cyan;
+
+}
+
+
+
+.level{
+
+display:inline-block;
+
+padding:15px 50px;
+
+border-radius:40px;
+
+background:
+linear-gradient(90deg,#00ffff,#487cff);
+
+font-size:25px;
+
+}
+
+
+.arena{
+
+margin-top:40px;
+
+height:340px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+
+
+.spider{
+
+width:220px;
+height:220px;
+
+border-radius:50%;
+
+background:
+radial-gradient(circle,#111,#02040a);
+
+position:relative;
+
+box-shadow:
+
+0 0 60px cyan;
+
+animation:
+float 3s infinite ease-in-out;
+
+cursor:pointer;
+
+}
+
+
+.spider:before{
+
+content:"";
+
+position:absolute;
+
+width:80px;
+height:80px;
+
+background:#050505;
+
+border-radius:50%;
+
+top:35px;
+left:70px;
+
+border:5px solid cyan;
+
+}
+
+
+.spider:after{
+
+content:"";
+
+position:absolute;
+
+width:130px;
+height:80px;
+
+background:#050505;
+
+border-radius:50%;
+
+top:95px;
+left:45px;
+
+border:5px solid cyan;
+
+}
+
+
+
+.leg{
+
+position:absolute;
+
+width:100px;
+
+height:8px;
+
+background:cyan;
+
+box-shadow:0 0 15px cyan;
+
+}
+
+
+.l1{top:100px;left:-60px;transform:rotate(25deg)}
+.l2{top:130px;left:-70px;transform:rotate(-25deg)}
+.l3{top:100px;right:-60px;transform:rotate(-25deg)}
+.l4{top:130px;right:-70px;transform:rotate(25deg)}
+
+
+
+@keyframes float{
+
+50%{
+transform:translateY(-15px);
+}
+
+}
+
+
+
+.tap{
+
+margin-top:20px;
+
+font-size:25px;
+
+text-align:center;
+
+}
+
+
+.stats{
+
+display:flex;
+
+justify-content:space-between;
+
+margin-top:20px;
+
+}
+
+
+.stat{
+
+background:
+rgba(255,255,255,.08);
+
+padding:15px;
+
+border-radius:20px;
+
+}
+
+
+
+.menu{
+
+position:fixed;
+
+bottom:20px;
+
+left:20px;
+
+right:20px;
+
+display:flex;
+
+justify-content:space-around;
+
+padding:20px;
+
+border-radius:40px;
+
+background:
+rgba(255,255,255,.15);
+
+backdrop-filter:blur(20px);
+
+}
+
+
+.menu div{
+
+opacity:.8;
+
+}
+
+
+</style>
 
 </head>
 
@@ -22,86 +297,46 @@
 <body>
 
 
-<div class="app">
+<div class="container">
 
-
-
-<!-- ЛОГО -->
 
 <div class="logo">
-
 SPIDER
+</div>
 
-<span>EMPIRE</span>
-
+<div class="sub">
+EMPIRE
 </div>
 
 
+<div class="card">
 
-<!-- ПРОФИЛЬ -->
-
-
-<div class="player">
-
-<div id="username">
-PLAYER
-</div>
-
-</div>
-
-
-
-
-
-<!-- БАЛАНС -->
-
-
-<div class="energy-box">
-
-
-<div class="energy-title">
-
+<div class="title">
 BALANCE
-
 </div>
 
-
-<div class="energy" id="balance">
-
+<div class="balance" id="balance">
 0
-
 </div>
 
 
-
-<div class="level" id="level">
-
+<div class="level">
 LEVEL 1
+</div>
 
 </div>
 
 
 
-</div>
+<div class="arena">
 
 
+<div class="spider" onclick="tap()">
 
-
-
-
-
-<!-- ПАУК -->
-
-
-<div class="spider-zone">
-
-
-<div class="spider">
-
-</div>
-
-
-<div id="reward">
+<div class="leg l1"></div>
+<div class="leg l2"></div>
+<div class="leg l3"></div>
+<div class="leg l4"></div>
 
 </div>
 
@@ -110,133 +345,30 @@ LEVEL 1
 
 
 
-
-
-<!-- КНОПКА -->
-
-
-<div class="tap-area">
-
-
-<button class="tap" id="tap">
-
+<div class="tap">
 TAP SPIDER
-
-</button>
-
-
 </div>
 
-
-
-
-
-
-
-<!-- СТАТИСТИКА -->
 
 
 <div class="stats">
 
-
-<div>
-
-POWER
-
-<strong id="power">
-
-1
-
-</strong>
-
+<div class="stat">
+POWER<br>
+<b id="power">1</b>
 </div>
 
 
-
-<div>
-
-INCOME
-
-<strong id="income">
-
-0/h
-
-</strong>
-
+<div class="stat">
+ENERGY<br>
+<b>1000</b>
 </div>
 
 
-
-<div>
-
-FRIENDS
-
-<strong id="friends">
-
-0
-
-</strong>
-
+<div class="stat">
+FRIENDS<br>
+<b>0</b>
 </div>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<!-- ПАНЕЛЬ ДРУЗЕЙ -->
-
-
-<div id="friendsPanel" class="panel">
-
-
-<h2>
-
-FRIENDS
-
-</h2>
-
-
-<p>
-
-Invite players and earn bonuses
-
-</p>
-
-
-
-<div id="inviteLink">
-
-Your link
-
-</div>
-
-
-
-<button onclick="copyInvite()">
-
-COPY LINK
-
-</button>
-
-
-
-<div class="friends-count">
-
-Invited:
-
-<span id="friendsCount">
-
-0
-
-</span>
 
 
 </div>
@@ -244,121 +376,47 @@ Invited:
 
 </div>
 
-
-
-
-
-
-
-
-<!-- ПРОФИЛЬ -->
-
-
-
-<div id="profilePanel" class="panel">
-
-
-<h2>
-
-PROFILE
-
-</h2>
-
-
-<p id="profileName">
-
-Player
-
-</p>
-
-
-<p>
-
-Level:
-<span id="profileLevel">
-1
-</span>
-
-</p>
-
-
-<p>
-
-Balance:
-<span id="profileBalance">
-0
-</span>
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-
-
-<!-- МЕНЮ -->
 
 
 <div class="menu">
 
-
-<div onclick="openHome()">
-
-HOME
-
-</div>
-
-
-
-<div onclick="openUpgrade()">
-
-UPGRADE
-
-</div>
-
-
-
-<div onclick="openFriends()">
-
-FRIENDS
-
-</div>
-
-
-
-<div onclick="openProfile()">
-
-PROFILE
-
-</div>
-
-
+<div>HOME</div>
+<div>UPGRADE</div>
+<div>FRIENDS</div>
+<div>PROFILE</div>
 
 </div>
 
 
 
 
+<script>
 
 
-</div>
+let balance=0;
 
 
+function tap(){
+
+balance++;
+
+document.getElementById("balance").innerHTML=balance;
 
 
+navigator.vibrate?.(20);
 
 
-<script src="telegram.js"></script>
+}
 
-<script src="app.js"></script>
+
+let tg=window.Telegram.WebApp;
+
+tg.expand();
+
+
+</script>
 
 
 
 </body>
-
 </html>
