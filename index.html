@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -10,6 +11,7 @@
 <link rel="stylesheet" href="style.css">
 
 </head>
+
 
 <body>
 
@@ -29,9 +31,7 @@
 
 <p>BALANCE</p>
 
-<h2 id="balance">
-0
-</h2>
+<h2 id="balance">0</h2>
 
 <div class="level">
 LEVEL 1
@@ -44,11 +44,18 @@ LEVEL 1
 
 <div class="spider-area">
 
-<div class="spider-button">
 
-<img src="assets/images/spider.png" alt="Spider">
+<button class="spider-button" onclick="clickSpider()">
+
+<div class="spider-icon">
+
+🕷
 
 </div>
+
+
+</button>
+
 
 </div>
 
@@ -61,23 +68,24 @@ LEVEL 1
 
 <div>
 <span>POWER</span>
-<b>1</b>
+<b id="power">1</b>
 </div>
 
 
 <div>
 <span>INCOME</span>
-<b>0/h</b>
+<b id="income">0/h</b>
 </div>
 
 
 <div>
 <span>FRIENDS</span>
-<b>0</b>
+<b id="friends">0</b>
 </div>
 
 
 </section>
+
 
 
 
@@ -99,7 +107,6 @@ LEVEL 1
 
 
 
-
 <button>
 
 <svg viewBox="0 0 24 24">
@@ -109,7 +116,6 @@ LEVEL 1
 <span>UPGRADE</span>
 
 </button>
-
 
 
 
@@ -125,7 +131,6 @@ LEVEL 1
 <span>FRIENDS</span>
 
 </button>
-
 
 
 
@@ -149,8 +154,25 @@ LEVEL 1
 
 
 
-<script src="app.js"></script>
+<script>
+
+let coins = 0;
+
+
+function clickSpider(){
+
+coins++;
+
+document.getElementById("balance").innerText = coins;
+
+
+}
+
+
+</script>
+
 
 
 </body>
+
 </html>
