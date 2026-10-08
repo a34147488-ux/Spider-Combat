@@ -1,36 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Spider Empire</title>
+<title>Empire Casino</title>
 
 <link rel="stylesheet" href="style.css">
+
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+
 </head>
 
 
 <body>
 
+
 <div class="app">
 
 
-<header class="logo">
-<h1>SPIDER</h1>
-<span>EMPIRE</span>
+<header class="casino-header">
+
+<h1>EMPIRE</h1>
+
+<p>CASINO</p>
+
 </header>
 
 
 
-<section class="balance">
+<section class="balance-box">
 
-<p>BALANCE</p>
+<span>BALANCE</span>
 
-<h2 id="balance">0</h2>
+<h2 id="balance">10000</h2>
 
-<div class="level">
-LEVEL 1
+<div class="currency">
+CHIPS
 </div>
 
 </section>
@@ -38,85 +46,159 @@ LEVEL 1
 
 
 
-<div class="spider-area">
+<section class="games">
 
-<button class="spider-button" onclick="clickSpider()">
 
-<div class="spider-symbol">
-🕷️
-</div>
+<h3>GAMES</h3>
 
+
+
+<div class="game-card">
+
+<img src="assets/olympus.png">
+
+<div>
+
+<h2>Gates Olympus</h2>
+
+<button onclick="openGame('olympus')">
+PLAY
 </button>
 
 </div>
 
-
-
-
-<section class="stats">
-
-<div>
-<span>POWER</span>
-<b>1</b>
 </div>
 
-<div>
-<span>INCOME</span>
-<b>0/h</b>
-</div>
+
+
+
+
+<div class="game-card">
+
+<img src="assets/doghouse.png">
 
 <div>
-<span>FRIENDS</span>
-<b>0</b>
+
+<h2>Dog House</h2>
+
+<button onclick="openGame('doghouse')">
+PLAY
+</button>
+
 </div>
+
+</div>
+
+
+
+
+
+<div class="game-card">
+
+<img src="assets/lebandit.png">
+
+<div>
+
+<h2>Le Bandit</h2>
+
+<button onclick="openGame('bandit')">
+PLAY
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="game-card">
+
+<img src="assets/roulette.png">
+
+<div>
+
+<h2>Roulette</h2>
+
+<button onclick="openGame('roulette')">
+PLAY
+</button>
+
+</div>
+
+</div>
+
+
 
 </section>
 
 
 
 
-<nav class="bottom-menu">
 
-<button class="active">
+
+<nav class="menu">
+
+
+<button onclick="home()">
+
 ⌂
-<span>HOME</span>
+
+<span>
+HOME
+</span>
+
 </button>
 
-<button>
-⚡
-<span>UPGRADE</span>
+
+
+<button onclick="games()">
+
+♛
+
+<span>
+GAMES
+</span>
+
 </button>
 
-<button>
+
+
+
+<button onclick="friends()">
+
 ♟
-<span>FRIENDS</span>
+
+<span>
+FRIENDS
+</span>
+
 </button>
 
-<button>
+
+
+<button onclick="profile()">
+
 ●
-<span>PROFILE</span>
+
+<span>
+PROFILE
+</span>
+
 </button>
+
+
 
 </nav>
 
 
+
 </div>
 
 
 
-<script>
-
-let coins = 0;
-
-function clickSpider(){
-
-coins++;
-
-document.getElementById("balance").innerText = coins;
-
-}
-
-</script>
+<script src="app.js"></script>
 
 
 </body>
