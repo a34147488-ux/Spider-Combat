@@ -8,7 +8,7 @@ padding:0;
 body{
 
 background:
-radial-gradient(circle at top,#3b2500,#050505 55%,#000);
+radial-gradient(circle at top,#273653,#05070d);
 
 font-family:Arial,sans-serif;
 
@@ -22,179 +22,167 @@ min-height:100vh;
 
 .app{
 
-padding:25px 18px 140px;
+padding:25px 18px 150px;
 
 }
 
 
 
-/* HEADER */
-
-.casino-header{
+.header{
 
 text-align:center;
 
-margin-bottom:30px;
+margin-bottom:25px;
 
 }
 
 
-.casino-header h1{
+.header h1{
 
-font-size:65px;
+font-family:Georgia,serif;
 
-letter-spacing:12px;
-
-color:#ffd700;
-
-text-shadow:
-0 0 15px #ffd700,
-0 0 40px #ff8c00;
-
-}
-
-
-.casino-header p{
-
-font-size:28px;
-
-letter-spacing:18px;
-
-color:#fff2a6;
-
-}
-
-
-
-
-
-/* BALANCE */
-
-
-.balance-box{
-
-background:
-linear-gradient(
-145deg,
-rgba(255,215,0,.25),
-rgba(255,255,255,.08)
-);
-
-
-border:2px solid #d4af37;
-
-border-radius:35px;
-
-padding:30px;
-
-text-align:center;
-
-box-shadow:
-
-0 0 30px #b88600;
-
-
-}
-
-
-
-.balance-box span{
-
-font-size:22px;
+font-size:55px;
 
 letter-spacing:8px;
-
-color:#ffe9a3;
-
-}
-
-
-
-.balance-box h2{
-
-font-size:70px;
-
-margin:15px;
 
 color:#fff;
 
 text-shadow:
+0 0 20px #d6b35c;
 
-0 0 20px gold;
+}
+
+
+.header p{
+
+font-size:25px;
+
+letter-spacing:12px;
+
+color:#d9b75b;
+
+margin-top:10px;
 
 }
 
 
 
-.currency{
+
+.balance{
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.12),
+rgba(255,255,255,.03)
+);
+
+border:1px solid #c5a34d;
+
+border-radius:30px;
+
+padding:25px;
+
+text-align:center;
+
+box-shadow:
+0 0 35px #000;
+
+}
+
+
+
+.balance span{
 
 font-size:18px;
 
-color:#ffd700;
+letter-spacing:8px;
+
+color:#d8c27b;
+
+}
+
+
+
+.balance h2{
+
+font-size:65px;
+
+margin:15px 0;
+
+color:#fff;
+
+text-shadow:
+0 0 25px gold;
+
+}
+
+
+
+.balance small{
+
+font-size:18px;
+
+color:#aaa;
 
 }
 
 
 
 
+.title{
 
-/* GAMES */
+font-size:35px;
+
+margin:35px 0 20px;
+
+color:#d7b65a;
+
+letter-spacing:3px;
+
+}
+
+
 
 
 .games{
 
-margin-top:35px;
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
 
 }
 
 
 
-.games h3{
-
-font-size:30px;
-
-margin-bottom:20px;
-
-color:#ffd700;
-
-}
-
-
-
-
-
-.game-card{
+.game{
 
 display:flex;
 
 align-items:center;
 
-gap:20px;
+gap:18px;
 
 background:
-
 rgba(255,255,255,.08);
-
-border:1px solid rgba(255,215,0,.5);
 
 border-radius:25px;
 
 padding:15px;
 
-margin-bottom:18px;
-
-
-backdrop-filter:blur(15px);
+border:1px solid rgba(255,215,100,.3);
 
 }
 
 
 
-.game-card img{
+.game img{
 
-width:90px;
+width:120px;
 
-height:90px;
+height:120px;
 
 border-radius:20px;
 
@@ -204,52 +192,40 @@ object-fit:cover;
 
 
 
-.game-card h2{
+.game h2{
 
-font-size:22px;
+font-size:25px;
 
-margin-bottom:12px;
+margin-bottom:15px;
 
 }
 
 
 
-
-.game-card button{
-
-width:120px;
-
-height:40px;
-
-border:none;
-
-border-radius:25px;
+.game button{
 
 background:
-
 linear-gradient(
 90deg,
-#ffd700,
-#ff9500
+#d5a93c,
+#ffdf75
 );
 
+border:0;
+
+padding:10px 35px;
+
+border-radius:25px;
 
 font-size:18px;
 
 font-weight:bold;
 
-color:#000;
-
-
 }
 
 
 
-
-/* MENU */
-
-
-.menu{
+nav{
 
 position:fixed;
 
@@ -259,24 +235,14 @@ left:15px;
 
 right:15px;
 
-height:95px;
-
-
-border-radius:50px;
-
+height:75px;
 
 background:
-
-rgba(30,30,30,.8);
-
-
-border:
-
-1px solid rgba(255,215,0,.5);
-
+rgba(20,20,25,.85);
 
 backdrop-filter:blur(20px);
 
+border-radius:40px;
 
 display:flex;
 
@@ -284,18 +250,13 @@ justify-content:space-around;
 
 align-items:center;
 
-
-box-shadow:
-
-0 0 30px black;
-
+border:1px solid #c79d3b;
 
 }
 
 
 
-.menu button{
-
+nav button{
 
 background:none;
 
@@ -303,35 +264,16 @@ border:0;
 
 color:white;
 
-font-size:28px;
+font-size:15px;
 
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-gap:5px;
-
+font-weight:bold;
 
 }
 
 
 
-.menu span{
+nav button:hover{
 
-font-size:13px;
-
-color:#ffd700;
-
-}
-
-
-
-
-button:active{
-
-transform:scale(.95);
+color:#ffd85a;
 
 }
