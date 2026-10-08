@@ -1,1 +1,0 @@
-let b=10000;document.querySelectorAll('button').forEach(x=>x.onclick=()=>{b+=100;document.getElementById('balance').innerText=b})
