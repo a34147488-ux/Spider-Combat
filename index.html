@@ -1,213 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Spider Empire</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+<title>Spider Empire</title>
 
 <style>
 
 *{
+margin:0;
+padding:0;
 box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }
 
 body{
-margin:0;
-min-height:100vh;
-background:
-radial-gradient(circle at top,#204080,#050914);
-color:white;
+
+height:100vh;
 overflow:hidden;
+
+background:
+radial-gradient(circle at 50% 20%,#123a62,#050817 60%);
+
+color:white;
+
 }
 
 
-.container{
-padding:25px;
+
+.app{
+
+height:100%;
+padding:25px 20px 110px;
+
 }
 
+
+
+/* HEADER */
 
 .logo{
-font-size:45px;
+
+font-size:38px;
 font-weight:900;
 letter-spacing:12px;
-text-align:center;
-margin-top:20px;
+
 text-shadow:
-0 0 20px #00ffff;
+0 0 30px #00eaff;
+
 }
 
 .sub{
-text-align:center;
-font-size:25px;
+
+font-size:18px;
 letter-spacing:15px;
-color:#668cff;
+color:#7ea7ff;
+
+margin-left:8px;
+
 }
 
+
+
+/* BALANCE */
 
 .card{
 
 margin-top:35px;
 
+padding:22px;
+
+border-radius:30px;
+
 background:
-rgba(255,255,255,.12);
+rgba(255,255,255,.09);
 
 border:
-
 1px solid rgba(255,255,255,.2);
 
-border-radius:35px;
-
-padding:25px;
-
-backdrop-filter:blur(20px);
+backdrop-filter:blur(25px);
 
 text-align:center;
 
 box-shadow:
-0 0 40px rgba(0,255,255,.15);
+0 0 50px rgba(0,200,255,.15);
 
 }
 
 
-.title{
-letter-spacing:10px;
+
+.label{
+
+letter-spacing:8px;
 opacity:.7;
+
 }
+
 
 .balance{
 
-font-size:80px;
+font-size:70px;
 font-weight:800;
 
 text-shadow:
-0 0 30px cyan;
+0 0 25px #00ffff;
 
 }
 
 
 
-.level{
-
-display:inline-block;
-
-padding:15px 50px;
-
-border-radius:40px;
-
-background:
-linear-gradient(90deg,#00ffff,#487cff);
-
-font-size:25px;
-
-}
-
+/* SPIDER AREA */
 
 .arena{
 
-margin-top:40px;
-
-height:340px;
+height:390px;
 
 display:flex;
 
-align-items:center;
-
 justify-content:center;
+
+align-items:center;
 
 }
 
 
 
-.spider{
+.spider-box{
 
-width:220px;
-height:220px;
+width:280px;
+height:280px;
 
 border-radius:50%;
 
 background:
-radial-gradient(circle,#111,#02040a);
 
-position:relative;
+radial-gradient(circle,
+rgba(0,255,255,.25),
+transparent 65%);
 
-box-shadow:
 
-0 0 60px cyan;
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+animation:
+pulse 3s infinite;
+
+}
+
+
+
+svg{
+
+width:220px;
+
+filter:
+
+drop-shadow(0 0 20px cyan);
 
 animation:
 float 3s infinite ease-in-out;
 
-cursor:pointer;
-
 }
-
-
-.spider:before{
-
-content:"";
-
-position:absolute;
-
-width:80px;
-height:80px;
-
-background:#050505;
-
-border-radius:50%;
-
-top:35px;
-left:70px;
-
-border:5px solid cyan;
-
-}
-
-
-.spider:after{
-
-content:"";
-
-position:absolute;
-
-width:130px;
-height:80px;
-
-background:#050505;
-
-border-radius:50%;
-
-top:95px;
-left:45px;
-
-border:5px solid cyan;
-
-}
-
-
-
-.leg{
-
-position:absolute;
-
-width:100px;
-
-height:8px;
-
-background:cyan;
-
-box-shadow:0 0 15px cyan;
-
-}
-
-
-.l1{top:100px;left:-60px;transform:rotate(25deg)}
-.l2{top:130px;left:-70px;transform:rotate(-25deg)}
-.l3{top:100px;right:-60px;transform:rotate(-25deg)}
-.l4{top:130px;right:-70px;transform:rotate(25deg)}
 
 
 
@@ -220,71 +179,116 @@ transform:translateY(-15px);
 }
 
 
+@keyframes pulse{
 
-.tap{
+50%{
 
-margin-top:20px;
-
-font-size:25px;
-
-text-align:center;
+box-shadow:
+0 0 80px cyan;
 
 }
+
+}
+
+
+
+/* STATS */
 
 
 .stats{
 
 display:flex;
 
-justify-content:space-between;
-
-margin-top:20px;
+gap:12px;
 
 }
+
 
 
 .stat{
 
-background:
-rgba(255,255,255,.08);
+flex:1;
 
 padding:15px;
 
-border-radius:20px;
+border-radius:22px;
+
+background:
+rgba(255,255,255,.08);
+
+text-align:center;
+
+border:
+1px solid rgba(255,255,255,.15);
 
 }
 
+
+
+.stat b{
+
+font-size:22px;
+
+}
+
+
+
+/* MENU */
 
 
 .menu{
 
 position:fixed;
 
-bottom:20px;
+bottom:18px;
 
-left:20px;
+left:18px;
 
-right:20px;
+right:18px;
+
+height:75px;
+
+border-radius:35px;
+
+
+background:
+
+rgba(255,255,255,.12);
+
+
+border:
+
+1px solid rgba(255,255,255,.25);
+
+
+backdrop-filter:blur(25px);
+
 
 display:flex;
 
+align-items:center;
+
 justify-content:space-around;
 
-padding:20px;
-
-border-radius:40px;
-
-background:
-rgba(255,255,255,.15);
-
-backdrop-filter:blur(20px);
 
 }
 
 
+
 .menu div{
 
-opacity:.8;
+font-size:12px;
+
+opacity:.7;
+
+}
+
+
+.menu .active{
+
+color:#00ffff;
+
+opacity:1;
 
 }
 
@@ -297,7 +301,7 @@ opacity:.8;
 <body>
 
 
-<div class="container">
+<div class="app">
 
 
 <div class="logo">
@@ -309,20 +313,17 @@ EMPIRE
 </div>
 
 
+
 <div class="card">
 
-<div class="title">
+<div class="label">
 BALANCE
 </div>
 
-<div class="balance" id="balance">
+<div class="balance">
 0
 </div>
 
-
-<div class="level">
-LEVEL 1
-</div>
 
 </div>
 
@@ -331,91 +332,130 @@ LEVEL 1
 <div class="arena">
 
 
-<div class="spider" onclick="tap()">
+<div class="spider-box">
 
-<div class="leg l1"></div>
-<div class="leg l2"></div>
-<div class="leg l3"></div>
-<div class="leg l4"></div>
+
+<svg viewBox="0 0 300 300">
+
+
+<!-- legs -->
+
+<g stroke="#00ffff" stroke-width="12" stroke-linecap="round">
+
+<path d="M90 120 L25 80"/>
+<path d="M85 150 L15 150"/>
+<path d="M90 180 L25 220"/>
+
+
+<path d="M210 120 L275 80"/>
+<path d="M215 150 L285 150"/>
+<path d="M210 180 L275 220"/>
+
+
+</g>
+
+
+
+<!-- body -->
+
+<ellipse cx="150" cy="170"
+rx="70"
+ry="80"
+fill="#050505"
+stroke="#00ffff"
+stroke-width="8"/>
+
+
+<!-- head -->
+
+<circle cx="150" cy="90"
+r="45"
+fill="#050505"
+stroke="#00ffff"
+stroke-width="8"/>
+
+
+<!-- eyes -->
+
+<circle cx="130" cy="85" r="8" fill="white"/>
+<circle cx="170" cy="85" r="8" fill="white"/>
+
+
+
+</svg>
+
 
 </div>
 
 
-</div>
-
-
-
-<div class="tap">
-TAP SPIDER
 </div>
 
 
 
 <div class="stats">
 
+
 <div class="stat">
-POWER<br>
-<b id="power">1</b>
+POWER
+<br>
+<b>1</b>
 </div>
 
 
 <div class="stat">
-ENERGY<br>
+LEVEL
+<br>
+<b>1</b>
+</div>
+
+
+<div class="stat">
+ENERGY
+<br>
 <b>1000</b>
 </div>
 
 
-<div class="stat">
-FRIENDS<br>
-<b>0</b>
 </div>
 
 
-</div>
-
 
 </div>
+
 
 
 
 <div class="menu">
 
-<div>HOME</div>
-<div>UPGRADE</div>
-<div>FRIENDS</div>
-<div>PROFILE</div>
+
+<div class="active">
+HOME
+</div>
+
+<div>
+UPGRADE
+</div>
+
+<div>
+FRIENDS
+</div>
+
+<div>
+PROFILE
+</div>
+
 
 </div>
 
 
 
-
 <script>
 
-
-let balance=0;
-
-
-function tap(){
-
-balance++;
-
-document.getElementById("balance").innerHTML=balance;
-
-
-navigator.vibrate?.(20);
-
-
-}
-
-
-let tg=window.Telegram.WebApp;
+const tg = window.Telegram.WebApp;
 
 tg.expand();
 
-
 </script>
-
 
 
 </body>
